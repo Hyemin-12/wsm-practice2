@@ -1,0 +1,22 @@
+h1 {
+    text-align: center;
+    max-width: 600px;
+    color: salmon;
+    padding: 30px;
+    font-size: 4rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 60px repeat(5, 1fr);
+    max-width: 600px;
+    height: 400px;
+    color: lightsalmon;
+}
+
+.grid-item {
+    border: 1px solid salmon;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
