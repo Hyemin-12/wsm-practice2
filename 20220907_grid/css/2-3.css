@@ -21,13 +21,6 @@ h1 {
     align-items: center;
 }
 
-/* .grid-item:nth-child(1) {
-    border: 1px solid white;
-} */
-.grid-item:nth-child(1) {
-    grid-column-start: 2;
-}
-
 .days-of-the-week {
     color: white;
     background-color: lightsalmon;
@@ -36,4 +29,67 @@ h1 {
 .period {
     color: white;
     background-color: lightsalmon;
+}
+
+/* .grid-item:nth-child(1) {
+    border: 1px solid white;
+} */
+.grid-item:nth-child(1) {
+    grid-column-start: 2;
+}
+
+.grid-item:nth-child(10) {
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 5;
+    grid-column-end: 6;
+}
+
+.grid-item:nth-child(18) {
+    grid-row-start: 4;
+    grid-row-end: 6;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.grid-item:nth-child(20) {
+    grid-row-start: 4;
+    grid-row-end: 6;
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
+
+.grid-item:nth-child(21) {
+    grid-row-start: 4;
+    grid-row-end: 6;
+    grid-column-start: 5;
+    grid-column-end: 6;
+}
+
+.grid-item:nth-child(27) {
+    grid-row-start: 6;
+    grid-row-end: 8;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.grid-item:nth-child(28) {
+    grid-row-start: 6;
+    grid-row-end: 8;
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+.grid-item:nth-child(31) {
+    grid-row-start: 6;
+    grid-row-end: 8;
+    grid-column-start: 6;
+    grid-column-end: 7;
+}
+
+.grid-item:nth-child(33) {
+    grid-row-start: 7;
+    grid-row-end: 9;
+    grid-column-start: 4;
+    grid-column-end: 5;
 }
