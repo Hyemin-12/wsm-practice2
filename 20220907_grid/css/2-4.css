@@ -10,8 +10,8 @@ h1 {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 40px repeat(7, 1fr);
-    max-width: 600px;
-    height: 400px;
+    max-width: 700px;
+    height: 500px;
     color: black;
 }
 
