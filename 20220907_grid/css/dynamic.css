@@ -1,12 +1,20 @@
-h1 {
-    text-align: center;max-width: 800px;
-    padding: 20px;
+.flex-container {
+    display: flex;
+    justify-content: center;
+    column-gap: 40px;
+}
+
+#prev_btn,
+#next_btn {
+    border: 2px solid #eee;
+    border-radius: 8px;
+    padding: 8px;
 }
 
 #calendar {
     max-width: 800px;
     height: 600px;
-    font-size: 2.5rem;
+    font-size: var(--h2-font-size);
 }
 
 .grid-container,
@@ -15,16 +23,8 @@ h1 {
     grid-template-columns: repeat(7, 1fr);
 }
 
-.date-grid-container {
-    color: black;
-}
-
 .grid-item {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.first {
-    grid-column-start: 5;
 }
