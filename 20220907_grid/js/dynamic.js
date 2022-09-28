@@ -1,80 +1,56 @@
+// 현재 구하기
+let now = new Date();
+
+// 현재 년
+let year = now.getFullYear();
+
+// 현재 월
+let month = now.getMonth(); // 0 ~ 11
+month++;
+
 const setCalendar = (year, month) => {
-    // 오늘 년, 오늘 월, 1 날짜 객체 구하자
+    // 1일이 무슨 요일?
     let firstDate = new Date(year, month - 1, 1);
-    // 그 객체 요일 구하자
     let firstDay = firstDate.getDay();
-    console.log(`${year}-${month} ${firstDay}요일`) //2022-9 4요일
-    // html 제어하자
 
-    // 오늘 년, 오늘 월+1, 0 날짜 객체 구하자
-    let lastDate = new Date(year, month, 0).getDate();
-    console.log(`${lastDate}일`)    //30일
+    // 말일은 며칠?
+    let lastDate = new Date(year, month, 0).getDate(); // 0일 => 이전 월의 마지막 일이 나옴
 
-    //제목 표시하자
-    //HTML id -> js 변수
-    const yearSpan = document.getElementById("year");
-    const monthSpan = document.getElementById("month");
-    //js.innerHTML 설정하자
-    yearSpan.innerHTML = year;
-    monthSpan.innerHTML = month;
+    // 제목 표시하기
+    const setTitle = (year, month) => {
+        // console.log(`${year}년 ${month}월`)
 
-    //1~lastDate까지 반복하자
+        // id는 바로 가져올 수 있음
+        // let title_year = document.getElementById("title_year");
+        title_year.innerHTML = year;
+        // let title_month = document.getElementById("title_month");
+        title_month.innerHTML = month;
+    }
+    setTitle(year, month);
+
     const dateGridContainerDiv = document.getElementsByClassName("date-grid-container")[0];
-    dateGridContainerDiv.innerHTML = '';    //초기화
+
+    // 초기화
+    dateGridContainerDiv.innerHTML = ""
+
+    // 1 ~ 말일까지 grid-item 만들기
     for (let i = 1; i <= lastDate; i++) {
-        //<div class="grid-item">$</div> -> <div class="date-grid-container"> 하위
-        //새로운 element 만들자
-        let newElem = document.createElement("div");
-        //그 element class="grid-item"
-        newElem.classList.add("grid-item");
-        //그 element 텍스트 = i
-        newElem.innerHTML = i
-        //.date-grid-container에 자식으로 붙이자
-        dateGridContainerDiv.appendChild(newElem);
+        // 요소 만들기
+        let newDiv = document.createElement("div");
+
+        // class에 grid-item 넣기
+        newDiv.classList.add("grid-item");
+
+        // text에 숫자 넣기
+        newDiv.innerHTML = i;
+
+        // 부모에 newDiv 달기
+        dateGridContainerDiv.appendChild(newDiv);
     }
 
-    //1일: grid-column-start: 요일 + 1;
+    // 1일에 해당하는 div를 grid-column-start: 요일 + 1;
     let firstDateDiv = dateGridContainerDiv.getElementsByClassName("grid-item")[0];
     firstDateDiv.style.gridColumnStart = firstDay + 1;
 }
-//prevMonth 함수
-const prevMonth = () => {
-    //이전 월 구하자
-    month--;
-    if (month == 0) {
-        month = 12;
-        year--;
-    }
-    //setCalendar(년, 구한 월);
-    setCalendar(year, month);
-}
-
-//nextMonth 함수
-const nextMonth = () => {
-    //다음 월 구하자
-    month++;
-    if (month == 13) {
-        month = 1;
-        year++;
-    }
-    //setCalendar(년, 구한 월);
-    setCalendar(year, month);
-}
-
-//prev버튼 누르면 prevMonth 함수 실행하자
-prev_btn.onclick = prevMonth;   //() 쓰지마 승빈아. ()쓰면 함수 실행한 결과를 넣는거야. 근데 리턴값없으니 undefined야
-//next버튼 누르면 nextMonth 함수 실행하자
-next_btn.onclick = nextMonth;
-
-
-
-
-// 오늘 구하자
-let today = new Date();
-// 오늘 년 구하자
-let year = today.getFullYear();
-// 오늘 월 구하자
-let month = today.getMonth();   //0~11
-month++;
 
 setCalendar(year, month);
