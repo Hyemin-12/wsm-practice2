@@ -54,3 +54,37 @@ const setCalendar = (year, month) => {
 }
 
 setCalendar(year, month);
+
+// 이전 달 달력 보이기
+const prevMonth = () => {
+    month--;
+    if(month == 0) {
+        month = 12;
+        year--;
+    }
+    setCalendar(year, month)
+};
+
+// 다음 달 달력 보이기
+const nextMonth = () => {
+    month++;
+    if(month == 13) {
+        month = 1;
+        year++;
+    }
+    setCalendar(year, month);
+}
+
+const initButton = () => {
+    //  HTML -> JS
+    // const prev_btn = document.getElementById("prev-btn");
+    // const next_btn = document.getElementById("next-btn");
+
+     // js event 달기
+    //  prev_btn.addEventListenr("click", prevMonth);
+    //  nexy_btn.addEventListenr("click", nextMonth);
+    prev_btn.onclick = prevMonth;
+    next_btn.onclick = nextMonth;
+}
+
+initButton();
