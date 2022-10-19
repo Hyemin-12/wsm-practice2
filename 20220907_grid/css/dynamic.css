@@ -1,4 +1,11 @@
-/***** Head *****/
+/***** Main *****/
+main {
+    display: flex;
+    column-gap: 40px;
+    flex-wrap: wrap;
+}
+
+/*** Calendar ***/
 .flex-container {
     display: flex;
     justify-content: center;
@@ -23,10 +30,8 @@ h1 {
     padding: 20px;
 }
 
-/*** Calendar ***/
 #calendar {
     max-width: 800px;
-    height: 600px;
     font-size: 2.5rem;
 }
 
@@ -55,6 +60,11 @@ h1 {
     display: grid;
     grid-template-rows: repeat(3, minmax(min-content, max-content));
     row-gap: 20px;
+}
+
+.menu-grid-container h1 {
+    text-align: left;
+    font-size: 1.25rem;
 }
 
 .breakfast,
