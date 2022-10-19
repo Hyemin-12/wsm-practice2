@@ -58,7 +58,7 @@ setCalendar(year, month);
 // 이전 달 달력 보이기
 const prevMonth = () => {
     month--;
-    if(month == 0) {
+    if (month == 0) {
         month = 12;
         year--;
     }
@@ -68,7 +68,7 @@ const prevMonth = () => {
 // 다음 달 달력 보이기
 const nextMonth = () => {
     month++;
-    if(month == 13) {
+    if (month == 13) {
         month = 1;
         year++;
     }
@@ -80,7 +80,7 @@ const initButton = () => {
     // const prev_btn = document.getElementById("prev-btn");
     // const next_btn = document.getElementById("next-btn");
 
-     // js event 달기
+    // js event 달기
     //  prev_btn.addEventListenr("click", prevMonth);
     //  nexy_btn.addEventListenr("click", nextMonth);
     prev_btn.onclick = prevMonth;
@@ -90,6 +90,10 @@ const initButton = () => {
 initButton();
 
 // 급식 API, AJAX로 급식 데이터 가져오기
+// .date-grid-container > .grid-item에 mouseover 이벤트 발생 시 handler 지정하기
+// handler에서 year, month, date 정보 가져와서 url 생성하기
+// AJAX(Asynchronous JavaScript And XML)로 url 호출하기
+// 응답오면 #breakfast, #lunch, #dinner에 출력하기
 const KEY = "b72b420005a14d27a0b1def0a75498f2";
 const ATPT_OFCDC_SC_CODE = "B10";   // 서울특별시 교육청
 const SD_SCHUL_CODE = "7010569";    // 미림여자정보과학고등학교
