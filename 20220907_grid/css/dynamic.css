@@ -32,7 +32,7 @@ h1 {
 
 #calendar {
     max-width: 800px;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
 }
 
 .grid-container,
@@ -49,6 +49,11 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.date-grid-container .grid-item:hover {
+    background-color: mediumpurple;
+    border-radius: 20px;
 }
 
 .first {
