@@ -109,7 +109,6 @@ const handler = (event) => {
 }
 
 // AJAX(Asynchronous JavaScript And XML)로 url 호출하기
-// 응답오면 #breakfast, #lunch, #dinner에 출력하기
 const getmenuByAPI = (url) => {
     // XMLHttpRequest 만들기
     let xhr = new XMLHttpRequest();
@@ -136,7 +135,7 @@ const getmenuByAPI = (url) => {
 const showMenu = (jsonString) => {
     // jsonString -> JSON
     let json = JSON.parse(jsonString); // JSON.stringify() : JSON -> String
-
+    
     // JSON -> 조식, 중식, 석식
     let breakfastMenu = "없음";
     let lunchMenu = "없음";
@@ -150,8 +149,9 @@ const showMenu = (jsonString) => {
     try {
         dinnerMenu = json["mealServiceDietInfo"][1]["row"][2]["DDISH_NM"];
     } catch {}
-
+    
     // 조식, 중식, 석식 -> HTML
+    // 응답오면 #breakfast, #lunch, #dinner에 출력하기
     breakfast.innerHTML = breakfastMenu;
     lunch.innerHTML = lunchMenu;
     dinner.innerHTML = dinnerMenu;
@@ -161,6 +161,6 @@ let dateGridContainerDiv = document.getElementsByClassName('date-grid-container'
 let gridItems = dateGridContainerDiv.getElementsByClassName('grid-item');
 for (let gridItem of gridItems) {
     // console.log(gridItem);
-    gridItem.onclick = handler;
+    gridItem.onmouseover = handler; // mouseover일 때 이벤트 처리
 }
 
