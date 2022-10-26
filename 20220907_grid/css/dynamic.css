@@ -22,12 +22,14 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 h1 {
     text-align: center;
     max-width: 800px;
     padding: 20px;
+    cursor: default;
 }
 
 #calendar {
@@ -49,11 +51,13 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: default;
 }
 
 .date-grid-container .grid-item:hover {
-    background-color: mediumpurple;
+    background-color: mediumturquoise;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 .first {
@@ -78,6 +82,6 @@ h1 {
 .dinner {
     width: 300px;
     border-radius: 8px;
-    background-color: lightgray;
+    background-color: azure;
     padding: 20px;
 }
