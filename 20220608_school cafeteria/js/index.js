@@ -6,7 +6,7 @@ const showToday = () => {
     let month = now.getMonth() + 1;
     let date = now.getDate();
     let day = now.getDay(); // 요일 : 0(일) ~ 6(토)
-    let namesOfTheDaysOfTheWeek_array = ["일", "월", "화", "'수", "목", "금", "토"];
+    let namesOfTheDaysOfTheWeek_array = ["일", "월", "화", "수", "목", "금", "토"];
     day = namesOfTheDaysOfTheWeek_array[day];
     // console.log(year, month, date, day);
     let title = `${year}.${month}.${date} (${day})`
